@@ -38,6 +38,8 @@ export class Snake implements LifeCycle
 
     public dispose(): void 
     {
-        // Clean up snake resources here
+       this.geometry.dispose();
+       this.material.dispose();
+       SceneManager.scene.remove(this.head); // Remove head from the scene
     }
 }

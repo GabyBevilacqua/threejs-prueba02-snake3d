@@ -1,5 +1,11 @@
+import { State } from "./states/state";
+import { States } from "./states/states";
 import { Color, HemisphereLight, PerspectiveCamera, Scene } from "three";
 import { Diorama } from "./classes/diorama";
+import { MenuState } from "./states/menuState";
+import { Game } from "./classes/game";
+import { GameState } from "./states/gameState";
+
 
 export class SceneManager {
   public static scene: Scene;
@@ -11,9 +17,8 @@ export class SceneManager {
     SceneManager.createScene();
     SceneManager.createCamera();
     SceneManager.createLights();
+    SceneManager.onReady();
 
-    const diorama = new Diorama();
-    diorama.start(); // Initialize the diorama which includes the snake and food
   }
 
   private static createScene(): void 
@@ -41,4 +46,11 @@ export class SceneManager {
     SceneManager.light.position.set(100, 100, 100); // Set light position
   }
 
+  private static onReady(): void
+  {
+    MenuState.diorama = new Diorama();
+    GameState.game = new Game();
+    State.setCurrent(States.menu);
+    MenuState.diorama.start();
+  }
 }

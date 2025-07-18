@@ -36,6 +36,8 @@ export class Food implements LifeCycle
 
   public dispose(): void 
   {
-    // Clean up food resources here
+    this.geometry.dispose();
+    this.material.dispose();
+    SceneManager.scene.remove(this.mesh); // Remove food from the scene
   }
 }

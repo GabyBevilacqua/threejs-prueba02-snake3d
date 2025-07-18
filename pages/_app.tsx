@@ -1,6 +1,8 @@
 import App from 'next/app';
 import { JSX } from 'react';
 import '../styles/main.css'
+import '../styles/menu.css';
+import '../styles/panel.css';
 
 export default class MyApp extends App {
     public render(): JSX.Element 
