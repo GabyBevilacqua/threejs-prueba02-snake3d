@@ -1,5 +1,6 @@
 import App from 'next/app';
 import { JSX } from 'react';
+import Head from 'next/head';
 import '../styles/main.css'
 import '../styles/menu.css';
 import '../styles/panel.css';
@@ -10,6 +11,13 @@ export default class MyApp extends App {
     public render(): JSX.Element 
     {
         const { Component, pageProps } = this.props;
-        return <Component {...pageProps} />;
+        return (
+            <>
+                <Head>
+                    <title>Snake 3D Three.js</title>
+                </Head>
+                <Component {...pageProps} />
+            </>
+        );
     }
 }
