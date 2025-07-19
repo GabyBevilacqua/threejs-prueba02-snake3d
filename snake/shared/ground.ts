@@ -4,8 +4,8 @@ import { SceneManager } from "../sceneManager";
 
 export class Ground implements LifeCycle
 {
-    private size: number = 15;
-    private division: number = 15;
+    public static size: number = 15;
+    public division: number = 15;
     public grid: GridHelper
 
     constructor()
@@ -15,8 +15,8 @@ export class Ground implements LifeCycle
 
     public start(): void
     {
-        const color = new Color(0.1, 0.1, 0.1);
-        this.grid = new GridHelper(this.size, this.division, color, color);
+        const color = new Color("#91caffff");
+        this.grid = new GridHelper(Ground.size, this.division, color, color);
         this.grid.position.set(0, -0.5, 0);
         SceneManager.scene.add(this.grid);
     }
@@ -28,6 +28,7 @@ export class Ground implements LifeCycle
 
     public dispose(): void
     {
-        // Clean up ground resources here
+        this.grid.dispose();
+        SceneManager.scene.remove(this.grid);
     }
 }

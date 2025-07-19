@@ -3,6 +3,7 @@ import { SceneManager } from "./sceneManager";
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
+import { GUIManager } from "./guiManager";
 
 export class RendererManager 
 {  
@@ -12,7 +13,7 @@ export class RendererManager
 
     private constructor() 
     {
-        console.log("RendererManager initialized");
+        GUIManager.createScore();
         SceneManager.init();
         RendererManager.init();
         window.addEventListener("resize", RendererManager.resize);
@@ -42,6 +43,7 @@ export class RendererManager
     private static createRenderer(): void
     {
         RendererManager.renderer = new WebGLRenderer({ canvas: RendererManager.canvas, antialias: true });
+        //RendererManager.renderer.setClearColor(0x000000, 0); // Set background color to transparent no funciona
         RendererManager.renderer.setPixelRatio(window.devicePixelRatio);
         RendererManager.renderer.setSize(window.innerWidth, window.innerHeight);
         RendererManager.renderer.toneMappingExposure = 2;

@@ -1,9 +1,9 @@
 import { State } from "./states/state";
 import { States } from "./states/states";
 import { Color, HemisphereLight, PerspectiveCamera, Scene } from "three";
-import { Diorama } from "./classes/diorama";
+import { Diorama } from "./shared/diorama";
 import { MenuState } from "./states/menuState";
-import { Game } from "./classes/game";
+import { Game } from "./shared/game";
 import { GameState } from "./states/gameState";
 
 

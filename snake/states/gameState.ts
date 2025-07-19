@@ -1,5 +1,5 @@
 
-import { Game } from "../classes/game";
+import { Game } from "../shared/game";
 import { MenuState } from "./menuState";
 import { State } from "./state";
 

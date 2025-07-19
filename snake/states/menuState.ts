@@ -1,4 +1,4 @@
-import { Diorama } from "../classes/diorama";
+import { Diorama } from "../shared/diorama";
 import { GUIManager } from "../guiManager";
 import { State } from "./state";
 

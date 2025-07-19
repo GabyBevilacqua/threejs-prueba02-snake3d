@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Video de fondo en loop */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.2;
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0; 
+  font-family: 'Roboto', sans-serif;
 }
 
 .fullscreen {
@@ -11,9 +26,13 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 2;
 }
 
+/* Asegura que los botones y la UI estén por encima del canvas y el video */
 .button {
+  position: relative;
+  z-index: 12;
   width: 200px;
   height: 50px;
   background-image: url("/ui/menuButton.svg");

@@ -14,6 +14,14 @@ export class Diorama implements LifeCycle
     private clock: Clock = new Clock();
     private time: number = 0;
     private distance: number = 20;
+
+    private handleResize = () => {
+        // Ajusta la distancia de la cámara según el tamaño de la ventana
+        // Puedes ajustar los factores para tu preferencia visual
+        const minSide = Math.min(window.innerWidth, window.innerHeight);
+        // El minSide * 2 es un factor que puedes modificar para acercar/alejar más
+        this.distance = Math.max(10, minSide * 3 / 100);
+    };
     
     public start(): void 
     {
@@ -21,6 +29,8 @@ export class Diorama implements LifeCycle
         this.snake = new Snake();
         this.food = new Food();
         this.ground = new Ground();
+       // this.handleResize();
+       // window.addEventListener('resize', this.handleResize);
         this.update();
     }
     
@@ -46,7 +56,9 @@ export class Diorama implements LifeCycle
     public dispose(): void 
     {
         this.stop = true;
+      //  window.removeEventListener('resize', this.handleResize);
         this.snake.dispose();
         this.food.dispose();
+        this.ground.dispose();
     }
 }
