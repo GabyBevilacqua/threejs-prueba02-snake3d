@@ -1,4 +1,4 @@
-import { BoxGeometry, Color, Mesh, MeshStandardMaterial } from "three";
+import { TorusGeometry, Color, Mesh, MeshStandardMaterial } from "three";
 import { LifeCycle } from "../types/helpers";
 import { SceneManager } from "../sceneManager";
 import { Ground } from "./ground";
@@ -6,7 +6,7 @@ import { Ground } from "./ground";
 export class Food implements LifeCycle 
 {
   private mesh: Mesh;
-  private geometry: BoxGeometry;
+  private geometry: TorusGeometry;
   private material: MeshStandardMaterial;
   public x: number = 4;
   public z: number = 4;
@@ -18,14 +18,15 @@ export class Food implements LifeCycle
 
   public start(): void 
   {
-    this.geometry = new BoxGeometry(1, 1, 1);
+    this.geometry = new TorusGeometry(0.5, 0.2, 16, 100);
     this.material = new MeshStandardMaterial({
-      color: new Color(0, 1, 0),
-      emissive: new Color(0, 1, 0),
+      color: new Color(255 / 255, 106 / 255, 6 / 255),
+      emissive: new Color(255 / 255, 106 / 255, 6 / 255),
       roughness: 0.55,
       metalness: 0.5,
     });
     this.mesh = new Mesh(this.geometry, this.material);
+    this.mesh.rotation.x = Math.PI / 2; // Rotar el torus para que quede horizontal
     this.mesh.position.set(this.x, 0, this.z);
     SceneManager.scene.add(this.mesh); // Add food to the scene
   }

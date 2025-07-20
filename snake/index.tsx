@@ -5,17 +5,16 @@ import Panel from "./ui/panel";
 import DefeatScreen from "./ui/defeatScreen";
 import VictoryScreen from "./ui/victoryScreen";
 
-export default class SnakeComponent extends Component 
-{
-  public componentDidMount(): void 
-  {
+export default class SnakeComponent extends Component {
+  public componentDidMount(): void {
     RendererManager.startGame();
   }
-  
-  public render(): ReactNode 
-  {
+
+  public render(): ReactNode {
     return (
       <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+        {/* Título fijo en la parte superior */}
+        <h1 className="main-title">SNAKE 3D</h1>
         {/* Video de fondo en loop */}
         <video
           className="background-video"

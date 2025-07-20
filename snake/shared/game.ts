@@ -67,7 +67,7 @@ export class Game implements LifeCycle
 
     public checkVictory(): void
     {
-      if (this.score > 10)
+      if (this.score > 12)
       {
         this.stop = true;
         State.setCurrent(States.victory);

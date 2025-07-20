@@ -1,3 +1,6 @@
+#panel a {
+    cursor: pointer;
+}
 #panel {
     display: none;
     position: relative;
@@ -8,7 +11,7 @@
 
 #panel img {
     position: absolute;
-    top: 40px;
+    top: 90px;
     left: 30vw;
     width: 64vw;
     height: 64vh; 
@@ -17,7 +20,7 @@
 
 #panel .title {
     position: absolute;
-    top: 36px;
+    top: 86px;
     left: 46vw;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -27,15 +30,15 @@
 
 #panel .text {
     position: absolute;
-    top: 150px;
+    top: 190px;
     left: 40vw;
-    color: white;
+    color: rgb(255, 188, 144);
     font-size: 1.2rem;
     font-weight: 500;
     z-index: 12;
 }
 
-@media(max-width: 1180px ) {
+@media(max-width: 800px ) {
     #panel {
         justify-content: flex-start;
         align-items: center;

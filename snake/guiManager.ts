@@ -7,10 +7,10 @@ export class GUIManager
   
     public static createScore(): void
     {
-        GUIManager.score.style.fontSize = "1rem";
-        GUIManager.score.style.color = "white";
+        GUIManager.score.style.fontSize = "2rem";
+        GUIManager.score.style.color = "aqua";
         GUIManager.score.style.position = "fixed";
-        GUIManager.score.style.top = "10px";
+        GUIManager.score.style.top = "40px";
         GUIManager.score.style.right = "60px";
         GUIManager.score.style.zIndex = "10";
         GUIManager.score.id = "score";

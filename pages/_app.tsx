@@ -8,8 +8,7 @@ import '../styles/defeat.css';
 import '../styles/victory.css';
 
 export default class MyApp extends App {
-    public render(): JSX.Element 
-    {
+    public render(): JSX.Element {
         const { Component, pageProps } = this.props;
         return (
             <>
@@ -17,6 +16,13 @@ export default class MyApp extends App {
                     <title>Snake 3D Three.js</title>
                 </Head>
                 <Component {...pageProps} />
+                <footer>
+                    <p>Visitas:</p>
+                    <img
+                        src="https://visitor-badge.laobi.icu/badge?page_id=threejs-prueba02-snake3d.vercel.app"
+                        alt="Contador de visitas"
+                    />
+                </footer>
             </>
         );
     }

@@ -26,8 +26,8 @@ export class Snake implements LifeCycle
         this.inputManager = new InputManager();
         this.geometry = new BoxGeometry(1, 1, 1);
         this.material = new MeshStandardMaterial({ 
-            color: new Color(0,0,1),
-            emissive: new Color(0, 0, 1), 
+            color: new Color(0, 1, 1),
+            emissive: new Color(0, 1, 1), 
             roughness: 0.55,
             metalness: 0.5
             

@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           {/* Otros tags de <head> aquí si los necesitas */}
-          
+
         </Head>
         <body>
           <Main />
